@@ -1,0 +1,106 @@
+.download{
+	width: 100%;
+	height: 100%;
+	&_tab{
+		display: flex;
+		justify-content: center;
+		height: 35px;
+		color: #fff;
+		font-size: 18px;
+
+		li{
+			position: relative;
+			@extend %hand;
+		}
+		li.on:after{
+			width: 35px;
+			opacity: 1;
+		}
+		li::after{
+			content:'';
+			display: block;
+			width: 0;
+			height: 3px;
+			margin: 10px auto 0;
+			background-color: #fff;
+			border-radius: 50px;
+			opacity: 0;
+			transition-duration: .3s;
+		}
+
+		li+li{
+			margin-left: 50px;
+		}
+	}
+
+
+	&_box{
+		overflow: hidden;
+		display: flex;
+		align-content: flex-start;
+		flex-wrap: wrap;
+		height: calc(100% - 35px);
+		@include mw_md{
+			@include scrollbar(auto , hidden);
+			flex-direction: column;
+			align-content: center;
+			height: 100%;
+			
+		}
+	}
+	&_item{
+		overflow: hidden;
+		position: relative;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		flex: none;
+		width: calc(100% / 5);
+		margin-top: 20px;
+		// background-color: #315A87;
+
+
+		@include mw_md{
+			width: auto;
+			min-width: 175px;
+		}
+		@include mw_sm{
+			min-width: 155px;
+			
+		}
+		&_pic{
+			overflow: hidden;
+			position: relative;
+			width: 100%;
+			max-width: 155px;
+			height: 155px;
+			background-color: #315a87;
+			border-radius: 3px;
+			@include mw_sm{
+				max-width: 142px;
+				height: 142px;
+			}
+
+			&::after{
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+				height: 35px;
+				color: #fff;
+				background: rgba($color: #1E2F54, $alpha: .9);
+				content: attr(data-text);
+			}
+			img{
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				width: 100%;
+				margin: auto;
+			}
+		}
+	}
+}

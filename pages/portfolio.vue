@@ -1,0 +1,65 @@
+<template>
+    <div class="main_container --portfolio">
+        <div class="sort">
+            <ul class="sort__list">
+                <li class="sort__btn --active">Character</li>
+                <li class="sort__btn">GIF</li>
+                <li class="sort__btn">Comics</li>
+                <li class="sort__btn">Video</li>
+            </ul>
+        </div>
+        <div class="character">
+            <div class="character__item --mango --active">
+                <h1 class="name">
+                    <img src="~/assets/images/portfolio/mango_name.svg" alt="萌果君" />
+                </h1>
+                <div class="img_box">
+                    <img src="~/assets/images/portfolio/mango_img1.png" alt="mangoking" />
+                    <img src="~/assets/images/portfolio/mango_img2.png" alt="料理" />
+                    <img src="~/assets/images/portfolio/mango_img3.png" alt="種植" />
+                    <img src="~/assets/images/portfolio/mango_img4.png" alt="探索" />
+                </div>
+            </div>
+            <div class="character__item --chabao">
+                <h1 class="name">
+                    <img src="~/assets/images/portfolio/chabao_name.svg" alt="柴寶" />
+                </h1>
+                <div class="img_box">
+                    <img src="~/assets/images/portfolio/chabao_img1.png" alt="Chabao" />
+                    <img src="~/assets/images/portfolio/chabao_img2.png" alt="各種睡" />
+                    <img src="~/assets/images/portfolio/chabao_img3.png" alt="飛翔" />
+                    <img src="~/assets/images/portfolio/chabao_img4.png" alt="外送" />
+                </div>
+            </div>
+            <div class="character__item --hanji">
+                <h1 class="name">
+                    <img src="~/assets/images/portfolio/hanji_name.svg" alt="夯吉" />
+                </h1>
+                <div class="img_box">
+                    <img src="~/assets/images/portfolio/hanji_img1.png" alt="Hanji" />
+                    <img src="~/assets/images/portfolio/hanji_img2.png" alt="挑食家" />
+                    <img src="~/assets/images/portfolio/hanji_img3.png" alt="釣魚" />
+                    <img src="~/assets/images/portfolio/hanji_img4.png" alt="逛街" />
+                </div>
+            </div>
+            <ul class="normal_page">
+                <li class="normal_page_btn">3</li>
+                <li class="normal_page_btn">2</li>
+                <li class="normal_page_btn on">1</li>
+                <li class="normal_page_btn prev"></li>
+                <li class="normal_page_btn next"></li>
+            </ul>
+        </div>
+        <div class="gif"></div>
+        <div class="comics"></div>
+        <div class="video"></div>
+    </div>
+</template>
+
+
+<script>
+export default {};
+</script>
+
+<style>
+</style>
