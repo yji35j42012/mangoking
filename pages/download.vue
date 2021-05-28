@@ -1,52 +1,40 @@
 <template>
     <div class="main_container">
-        <main class="main">
-            <div class="download">
-                <ul class="normol_tab">
-                    <li
-                        @click="tabNum = 0"
-                        :class="[this.tabNum == 0 ? 'on' : '']"
-                    >
-                        PC wallpaper
-                    </li>
-                    <li
-                        @click="tabNum = 1"
-                        :class="[this.tabNum == 1 ? 'on' : '']"
-                    >
-                        Mobile wallpaper
-                    </li>
-                </ul>
-
-                <div class="download_box">
-                    <div class="download_item">
-                        <div class="download_item_pic" data-text="wallpaper01">
-                            <img
-                                src="~/assets/images/download/W540x960_01 (1).jpg"
-                                alt=""
-                            />
-                        </div>
+        <div class="download">
+            <Tab
+                :tabName="['PC wallpaper', 'Mobile wallpaper']"
+                @changeTab="changeTabHandler"
+            ></Tab>
+            <div class="download_box">
+                <div class="download_item">
+                    <div class="download_item_pic" data-text="wallpaper01">
+                        <img
+                            src="~/assets/images/download/W540x960_01 (1).jpg"
+                            alt=""
+                        />
                     </div>
                 </div>
             </div>
+        </div>
 
-            <ul class="normol_page" style="display: none">
-                <li class="normol_page_btn">3</li>
-                <li class="normol_page_btn">2</li>
-                <li class="normol_page_btn on">1</li>
-                <li class="normol_page_btn prev"></li>
-                <li class="normol_page_btn next"></li>
-            </ul>
-        </main>
+        <ul class="normal_page" style="display: none">
+            <li class="normal_page_btn">3</li>
+            <li class="normal_page_btn">2</li>
+            <li class="normal_page_btn on">1</li>
+            <li class="normal_page_btn prev"></li>
+            <li class="normal_page_btn next"></li>
+        </ul>
     </div>
 </template>
 <script>
+import Tab from "~/components/Tab.vue";
 export default {
     data() {
-        return {
-            tabNum: 0,
-        };
+        return {};
     },
-
+    components: {
+        Tab,
+    },
     mounted() {
         window.onresize = () => {
             return (() => {
@@ -82,6 +70,9 @@ export default {
                     download_item[i].style.width = "";
                 }
             }
+        },
+        changeTabHandler(num) {
+            // console.log(num);
         },
     },
 };
